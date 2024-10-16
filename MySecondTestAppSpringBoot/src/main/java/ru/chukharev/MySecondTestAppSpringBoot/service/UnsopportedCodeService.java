@@ -7,5 +7,6 @@ import ru.chukharev.MySecondTestAppSpringBoot.model.Request;
 
 @Service
 public interface UnsopportedCodeService {
-    public void isValid(Request request, BindingResult bindingResult) throws UnsupportedCodeException;
+    public void isValid(Request request, BindingResult bindingResult) throws
+            UnsupportedCodeException;
 }
