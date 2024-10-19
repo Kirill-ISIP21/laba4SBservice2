@@ -54,18 +54,21 @@ public class MyController {
             response.setCode(Codes.FAILED);
             response.setErrorCode(ErrorCodes.UNSOPPORTED_EXCEPTION);
             response.setErrorMessage(ErrorMessages.UNSOPPORTED);
+            log.error("Error: {}", e);
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 
         } catch (ValidationFailedException e){
             response.setCode(Codes.FAILED);
             response.setErrorCode(ErrorCodes.VALIDATION_EXCEPTION);
             response.setErrorMessage(ErrorMessages.VALIDATION);
+            log.error("Error: {}", e);
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 
         } catch (Exception e){
             response.setCode(Codes.FAILED);
             response.setErrorCode(ErrorCodes.UNKNOWN_EXCEPTION);
             response.setErrorMessage(ErrorMessages.UNKNOWN);
+            log.error("Error: {}", e);
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 
         }

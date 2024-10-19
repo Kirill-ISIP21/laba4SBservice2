@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
+import ru.chukharev.MySecondTestAppSpringBoot.util.Systems;
 
 @Data
 @Builder
@@ -24,7 +25,7 @@ public class Request {
     @Size(min=0, max = 32)
     private String operationUid;
 
-    private String systemName;
+    private Systems systemName;
 
     @NotBlank
     private String systemTime;
